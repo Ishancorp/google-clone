@@ -2,9 +2,48 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/background.css">
-        <style></style>
+        <style>
+            .topbar {
+                position: absolute;
+                top: 20px;
+                min-width: 1124px;
+                z-index: 128;
+            }
+            .textbox {
+                width: 538px;
+                display: flex;
+                z-index: 3;
+                min-height: 44px;
+                background: #303134;
+                border: 1px solid transparent;
+                box-shadow: 0 1px 3px rgba(23,23,23,0.24);
+                border-radius: 24px;
+                margin: 0 auto;
+            }
+            textarea {
+                font: 16px arial,sans-serif;
+                line-height: 22px;
+                margin-bottom: 8px;
+                overflow-x: hidden;
+                resize: none;
+                background-color: transparent;
+                border: none;
+                margin: 0;
+                padding: 0 0 3px;
+                color: #e8eaed;
+                word-wrap: break-word;
+                outline: none;
+                display: flex;
+                -webkit-tap-highlight-color: transparent;
+                flex: 100%;
+            }
+        </style>
     </head>
     <body>
-        <div class="topbar"></div>
+        <div class="topbar">
+            <div class="textbox">
+                <textarea rows="1" cols="80" expanded="false"></textarea>
+            </div>
+        </div>
     </body>
 </html>
