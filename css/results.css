@@ -1,10 +1,15 @@
+.topnotlogo {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 90%;
+}
 .topbar {
     position: absolute;
     top: 20px;
-    min-width: 1124px;
+    min-width: 98%;
     z-index: 128;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     border-bottom: 1px solid #3c4043;
 }
 .textbox {
@@ -16,8 +21,6 @@
     align-items: center;
     text-align: center;
     flex: 1;
-    padding: 10px;
-    padding-left: 20px;
 }
 textarea {
     width: 50px;
@@ -51,6 +54,8 @@ textarea {
 }
 .logobox {
     padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 40px;
 }
 .tabs {
     display: flex;
@@ -138,4 +143,58 @@ h3:hover {
     display: block;
     line-height: 20px;
     white-space: nowrap;
+}
+.result-favicon {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+    line-height: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    user-select: none;
+    color: rgb(18, 18, 18);
+    background-color: #ffffff;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.result-head {
+    display: flex;
+}
+.pfp {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+    line-height: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    user-select: none;
+    color: rgb(18, 18, 18);
+    background-color: rgb(117, 117, 117);
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.threedots {
+    max-height: 26px;
+    color: #9aa0a6;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
