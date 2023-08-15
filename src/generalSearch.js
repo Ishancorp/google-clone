@@ -1,7 +1,6 @@
 import './css/background.css';
 import './css/index.css';
 
-
 function Topbar() {
     return (
         <div className="topbar">
@@ -82,7 +81,7 @@ function Bottom(){
 
 
 
-export default function App(){
+export default function GeneralSearch(){
     return (
         <div className="general">
             <Topbar/>
