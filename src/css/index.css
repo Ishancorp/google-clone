@@ -38,7 +38,7 @@
     margin-bottom: 15%;
     text-align: center;
 }
-textarea {
+textarea.index {
     border: 0px;
     resize: none;
     outline: none;

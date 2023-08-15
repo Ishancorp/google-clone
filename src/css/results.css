@@ -17,12 +17,13 @@
     background-color: #303134;
     border: 1px solid #303134;
     padding: 10px;
+    padding-left: 20px;
     display: inline-flex;
     align-items: center;
     text-align: center;
     flex: 1;
 }
-textarea {
+textarea.res {
     width: 50px;
     font: 16px arial,sans-serif;
     line-height: 22px;
