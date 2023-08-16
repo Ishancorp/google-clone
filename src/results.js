@@ -1,8 +1,11 @@
 import './css/background.css';
 import './css/results.css';
 
-function listResults() {
-    const list = fetch('https://www.googleapis.com/customsearch/v1?key=INSERT_YOUR_API_KEY&cx=017576662512468239146:omuauf_lfve&q=lectures')
+require('dotenv').config()
+
+async function ListResults() {
+    console.log(0)
+    const list = await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=017576662512468239146:omuauf_lfve&q=lectures`)
         .then(response => response.json())
     console.log(list)
 
@@ -84,7 +87,7 @@ export default function Results() {
             </div>
             <div className="bottom-part">
                 <div className="num-results">About 49,100 results (0.56 seconds)</div>
-                <listResults/>
+                <ListResults/>
             </div>
         </div>
     );
