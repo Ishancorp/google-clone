@@ -1,5 +1,6 @@
 import './css/background.css';
 import './css/index.css';
+import { useState } from "react";
 
 function Topbar() {
     return (
@@ -16,11 +17,13 @@ function Topbar() {
                 <div className="counterweight"></div>
             </div>
         </div>
-
     );
 }
 
 function Main() {
+    const [query, setQuery] = useState({})
+    const editSearch = event => setQuery(`results?q=${event.target.value}`);
+
     return (
         <div className="main">
             <div className="logo">
@@ -33,13 +36,13 @@ function Main() {
                     <path fill="#FFFFFF" d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z"/>
                 </svg>
             </div>
-            <form action="results.html" onsubmit="submitSearch()">
+            <form action={query}>
                 <div className="content">
                     <div className="searchform">
                         <svg className="searchglass" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path fill="#9aa0a6" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
                         </svg>
-                        <textarea className="index" rows="1" cols="80" expanded="false"></textarea>
+                        <textarea className="index" rows="1" cols="80" expanded="false" onChange={editSearch}></textarea>
                         <svg className="colored" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="#4285f4" d="m12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z"></path>
                             <path fill="#34a853" d="m11 18.08h2v3.92h-2z"></path>
