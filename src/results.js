@@ -1,6 +1,26 @@
 import './css/background.css';
 import './css/results.css';
 
+function listResults() {
+    const list = fetch('https://www.googleapis.com/customsearch/v1?key=INSERT_YOUR_API_KEY&cx=017576662512468239146:omuauf_lfve&q=lectures')
+        .then(response => response.json())
+    console.log(list)
+
+    return (
+        <div className="result">
+            <div className="result-head">
+                <div className="result-favicon">S</div>
+                <div>
+                    <div className="sitename">Sitename</div>
+                    <div><cite>http://www.sitename.com › home</cite></div>
+                </div>
+            </div>
+            <div><a href="http://google.com"><h3>Sitename</h3></a></div>
+            <div className="result-blurb">Welcome to Sitename, your site for name. Here we make nuclear-armed sites with any name you desire!</div>
+        </div>
+    );
+}
+
 export default function Results() {
     return (
         <div className='general'>
@@ -64,17 +84,7 @@ export default function Results() {
             </div>
             <div className="bottom-part">
                 <div className="num-results">About 49,100 results (0.56 seconds)</div>
-                <div className="result">
-                    <div className="result-head">
-                        <div className="result-favicon">S</div>
-                        <div>
-                            <div className="sitename">Sitename</div>
-                            <div><cite>http://www.sitename.com › home</cite></div>
-                        </div>
-                    </div>
-                    <div><a href="http://google.com"><h3>Sitename</h3></a></div>
-                    <div className="result-blurb">Welcome to Sitename, your site for name. Here we make nuclear-armed sites with any name you desire!</div>
-                </div>
+                <listResults/>
             </div>
         </div>
     );
