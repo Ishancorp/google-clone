@@ -13,7 +13,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<GeneralSearch />}/>
-        <Route path="/results" element={<Results />}/>
+        <Route path="/results/:query" element={<Results />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

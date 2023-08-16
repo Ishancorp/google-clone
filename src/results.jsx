@@ -1,16 +1,18 @@
 import './css/background.css';
 import './css/results.css';
 import { Fragment, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 
 function ListResults() {
     const [data, setData] = useState({})
+    const { query } = useParams();
 
     useEffect(() => {
         console.log(0)
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_GOOGLE_API_KEY}&cx=327a57f38c4824c2f&q=${urlParams.get('q')}`)
+        fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_GOOGLE_API_KEY}&cx=327a57f38c4824c2f&q=${query}`)
             .then(response => response.json())
             .then(resp => {console.log(resp); setData(resp)})
     }, [])
@@ -32,17 +34,16 @@ function ListResults() {
                         </div>
                     )}
                 </Fragment>
-            : <Fragment></Fragment>
+            : <Fragment>Loading</Fragment>
     );
 }
 
 function TextBox() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
+    const { query } = useParams();
 
     return (
         <div className="textbox-res">
-            <textarea className="res" rows="1" cols="10" expanded="false">{urlParams.get('q')}</textarea>
+            <textarea className="res" rows="1" cols="10" expanded="false">{query}</textarea>
             <svg className="colored" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path fill="#9aa0a6" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
             </svg>

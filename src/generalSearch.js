@@ -22,7 +22,7 @@ function Topbar() {
 
 function Main() {
     const [query, setQuery] = useState({})
-    const editSearch = event => setQuery(`results?q=${event.target.value}`);
+    const editSearch = event => setQuery(`results/${event.target.value}`);
 
     return (
         <div className="main">
