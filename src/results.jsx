@@ -2,7 +2,7 @@ import './css/background.css';
 import './css/results.css';
 import { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import Result from './reselems/result'
 
 function ListResults() {
     const [data, setData] = useState({})
@@ -21,17 +21,7 @@ function ListResults() {
                 <Fragment>
                     <div className="num-results">About {data.searchInformation.formattedTotalResults} results ({data.searchInformation.formattedSearchTime} seconds)</div>
                     {data.items.map(res => 
-                        <div className="result">
-                            <div className="result-head">
-                                <div className="result-favicon">S</div>
-                                <div>
-                                    <div className="sitename">{res.title}</div>
-                                    <div><cite>{res.link}</cite></div>
-                                </div>
-                            </div>
-                            <div><a href="http://google.com"><h3>{res.title}</h3></a></div>
-                            <div className="result-blurb">{res.snippet}</div>
-                        </div>
+                        <Result res={res}/>
                     )}
                 </Fragment>
             : <Fragment>Loading</Fragment>
@@ -45,7 +35,9 @@ function TextBox() {
 
     const editSearch = event => setQuery(`results/${event.target.value}`);
 
-    const enterSearch = event => {if(event.keyCode === 13 && query) window.location.pathname = query};
+    const enterSearch = event => {
+        if(event.keyCode === 13 && query) window.location.pathname = query
+    };
 
     return (
         <div className="textbox-res">

@@ -146,6 +146,7 @@ h3:hover {
 }
 .result-blurb {
     color: #bdc1c6;
+    line-height: 1.58;
 }
 .sitename {
     color: #dadce0;
