@@ -8,6 +8,8 @@ Start page
 
 ![start page](demo_images/Home.png)
 
+Search page
+
 ![executed search page](demo_images/executed_search.png)
 
 ## Table of Contents
