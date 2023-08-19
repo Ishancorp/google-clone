@@ -29,7 +29,7 @@ Search page
 
 - React for structuring the content and interactivity.
 - CSS3 for styling and layout.
-- JavaScript for interactivity and search functionality.
+- Google's Custom Search API for search functionality.
 
 ## Usage
 
